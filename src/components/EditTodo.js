@@ -13,11 +13,11 @@ class EditProject extends Component {
   handleFormSubmit = event => {
     const title = this.state.title;
     const body = this.state.body;
-
+    console.log(this.props)
     event.preventDefault();
 
     axios
-      .put(`http://localhost:4000/api/projects/${this.props.theTodo._id}`, {
+      .put(`http://localhost:4000/api/v1/todos/${this.props.theTodo._id}`, {
         title,
         body
       })
@@ -37,7 +37,7 @@ class EditProject extends Component {
 
   handleChangeBody = event => {
     this.setState({
-      description: event.target.value
+      body: event.target.value
     });
   };
 
