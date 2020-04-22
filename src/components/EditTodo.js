@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class EditProject extends Component {
+class EditTodo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +22,6 @@ class EditProject extends Component {
         body
       })
       .then(() => {
-        this.props.getTheTodo();
-        // after submitting the form, redirect to '/projects'
         this.props.history.push("/todos");
       })
       .catch(error => console.log(error));
@@ -68,4 +66,4 @@ class EditProject extends Component {
   }
 }
 
-export default EditProject;
+export default EditTodo;

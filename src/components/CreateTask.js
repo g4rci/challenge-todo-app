@@ -9,9 +9,10 @@ class CreateTask extends Component {
       const {title, body } = this.state;
       await axios
         .post("http://localhost:4000/api/v1/todos", { title, body})
-        .then(() =>{
-        this.props.history.push("/todos")
+        .then(() => {
+          this.props.history.push("/todos");
         })
+        .catch(error => console.log(error));
     };
   
     handleChange = (event) => {
